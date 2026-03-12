@@ -1,30 +1,61 @@
-/* ========== Badge Layout (responsive 2‑row grid) ========== */
-.credentials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-auto-rows: 60px;       /* makes all rows uniform height */
-  gap: 10px;
-  margin-top: 10px;
-
-  justify-items: center;       /* center badges horizontally */
-  align-items: center;         /* center badges vertically */
+/* ====================== Base Styles ====================== */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0;
 }
 
-.credentials img {
-  max-height: 50px;
-  width: auto;                 /* preserve aspect ratio */
-  display: block;              /* avoid inline spacing issues */
-
-  /* subtle transition for hover */
-  transition: transform 0.25s ease, filter 0.25s ease;
+.card {
+  max-width: 420px;
+  margin: auto;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
-/* ========== Optional Hover Effect ========== */
-.credentials img:hover {
-  transform: scale(1.15);
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+/* ====================== Typography ====================== */
+h1 {
+  margin-bottom: 5px;
 }
 
+p.subtitle {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.contact {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ====================== Buttons ====================== */
+a.button {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  background: #334155;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.2s ease;
+}
+
+a.button:hover {
+  background: #475569;
+}
+
+/* ====================== Save Contact / QR ====================== */
 .save-contact {
   margin: 20px 0;
   text-align: center;
@@ -38,7 +69,8 @@
 }
 
 .save-contact img {
-  max-width: 250px;          /* keep QR readable */
+  width: 80%;
+  max-width: 250px;          /* QR stays readable */
   border-radius: 16px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.35);
   transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
@@ -49,4 +81,69 @@
   transform: scale(1.1);
   filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* ====================== Credentials Grid ====================== */
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-auto-rows: 60px;       /* uniform height */
+  gap: 10px;
+  margin-top: 10px;
+  justify-items: center;
+  align-items: center;
+}
+
+.credentials img {
+  max-height: 50px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.credentials img:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.3));
+}
+
+/* ====================== Iframe ====================== */
+iframe {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 350 / 90;
+  border: none;
+  margin-top: 20px;
+}
+
+/* ====================== Responsive Adjustments ====================== */
+@media (max-width: 400px) {
+  .card {
+    padding: 20px;
+  }
+
+  .save-contact img {
+    width: 80%;
+  }
+
+  .credentials {
+    grid-auto-flow: column;       /* scrollable horizontal on tiny screens */
+    grid-auto-columns: 80px;
+    overflow-x: auto;
+    gap: 8px;
+  }
+
+  footer {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 350px) {
+  .contact {
+    font-size: 13px;
+  }
+
+  a.button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

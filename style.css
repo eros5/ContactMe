@@ -1,10 +1,18 @@
-.credentials{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-gap:5px;
-margin-top:5px;
+/* Badge container: 2-row responsive grid */
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-auto-rows: 60px;      /* fixed row height for consistent alignment */
+  gap: 10px;                  /* space between badges */
+  margin-top: 10px;
+
+  justify-items: center;      /* horizontal center in each cell */
+  align-items: center;        /* vertical center in each cell */
 }
-.credentials img{
-max-height:50px;
-margin:auto;
+
+/* Badge images */
+.credentials img {
+  max-height: 50px;
+  width: auto;                /* maintain aspect ratio */
+  display: block;             /* removes inline spacing */
 }

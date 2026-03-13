@@ -55,32 +55,38 @@ a.button:hover {
   background: #475569;
 }
 
-/* ====================== Save Contact / QR ====================== */
+/* ====================== Save Contact / QR - Modern Style ====================== */
 .save-contact {
-  margin: 20px 0;
+  margin: 25px 0;
   text-align: center;
 }
 
 .save-contact p {
-  margin-bottom: 10px;
-  font-weight: bold;
+  margin-bottom: 12px;
+  font-weight: 600;
   color: #ffffff;
   font-size: 16px;
 }
 
-.save-contact img {
-  width: 80%;
-  max-width: 250px;          /* QR stays readable */
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
+.qr-wrapper {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 8px;
+  background: linear-gradient(145deg, #1e293b, #334155);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.save-contact img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.5));
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+.qr-wrapper:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.save-contact img {
+  display: block;
+  width: 80%;
+  max-width: 250px;
+  border-radius: 16px;
 }
 
 /* ====================== Credentials Grid ====================== */
@@ -88,7 +94,7 @@ a.button:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   grid-auto-rows: 60px;       /* uniform height */
-  gap: 10px;
+  gap: 5px;
   margin-top: 10px;
   justify-items: center;
   align-items: center;

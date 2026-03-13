@@ -55,49 +55,58 @@ a.button:hover {
   background: #475569;
 }
 
-/* ====================== Save Contact / QR - Modern Style ====================== */
+/* ====================== Save Contact / QR ====================== */
 .save-contact {
   margin: 25px 0;
   text-align: center;
 }
 
-.save-contact p {
-  margin-bottom: 12px;
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 16px;
-}
-
 .qr-wrapper {
   display: inline-block;
   border-radius: 20px;
-  padding: 8px;
+  padding: 12px;
   background: linear-gradient(145deg, #1e293b, #334155);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .qr-wrapper:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+}
+
+.qr-wrapper:active {
+  transform: scale(0.98);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 }
 
 .save-contact img {
   display: block;
-  width: 80%;
-  max-width: 250px;
+  width: 90%;        /* make QR more prominent */
+  max-width: 260px;
+  margin: auto;      /* centre it */
   border-radius: 16px;
 }
 
-/* ====================== Credentials Grid ====================== */
+/* ====================== Credentials / Badges ====================== */
+.credentials-wrapper {
+  overflow-x: auto;  /* scrollable horizontally on small screens */
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.credentials-wrapper::-webkit-scrollbar {
+  display: none;     /* Chrome, Safari */
+}
+
 .credentials {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  grid-auto-rows: 60px;       /* uniform height */
-  gap: 5px;
-  margin-top: 10px;
+  grid-auto-rows: 60px;
+  gap: 12px;
   justify-items: center;
   align-items: center;
+  padding: 5px 0;
 }
 
 .credentials img {
@@ -128,13 +137,12 @@ iframe {
   }
 
   .save-contact img {
-    width: 80%;
+    width: 85%;
   }
 
   .credentials {
-    grid-auto-flow: column;       /* scrollable horizontal on tiny screens */
+    grid-auto-flow: column;
     grid-auto-columns: 80px;
-    overflow-x: auto;
     gap: 8px;
   }
 
